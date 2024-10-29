@@ -1,0 +1,47 @@
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Cabecalho Cabecalho Cabecalho Cabecalho Cabecalho"
+      "barra_navegacao barra_navegacao barra_navegacao barra_navegacao barra_navegacao"
+      "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
+      "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
+      "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
+      "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
+      "rodape rodape rodape rodape rodape";
+}
+  
+*{
+    margin: 0;
+    padding: 0;
+}
+.Cabecalho { grid-area: Cabecalho; }
+  
+.barra_navegacao { grid-area: barra_navegacao; }
+
+.contetudo_principal { grid-area: contetudo_principal; }
+  
+.conteudo_dicional { grid-area: conteudo_dicional; }
+
+.rodape { grid-area: rodape; }
+
+.Cabecalho{
+    background-color: red;
+}
+.barra_navegacao{
+    background-color: aqua;
+}
+
+.contetudo_principal{
+    background-color: black;
+}
+.conteudo_dicional{
+    background-color: aquamarine;
+}
+
+.rodape{
+    background-color: blueviolet;
+}
+  
