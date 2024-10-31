@@ -1,47 +1,87 @@
-.container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
+
+/* Importação da fonte Roboto para usar em titulos de artigos ou textos chamativos */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Importação da fonte Lora para usar em textos de artigos ou subtitulos*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --cor-primaria: ;
+    --cor-secundaria: ;
+    --cor-terciaria: ;
+    --cor-hover: ;
+    --fonte-primaria:'Roboto', sans-serif;
+    --fonte-secundaria:'Lora', sans-serif;
+
+}
+
+
+
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o padding padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura e altura dos elementos */
+}
+
+body {
+    height: 100vh; /* Faz com que o body ocupe toda a altura da tela */
+    font-family: var(--fonte-secundaria); /*Faz que todo o texto fique com a fonte secundaria*/
+    
+}
+
+.container {
+    display: grid; /* Define o contêiner como um grid */
+    height: 100%; /* Faz com que o grid ocupe toda a altura do contêiner pai */
+    grid-template-columns: repeat(5, 1fr); /* Cria 5 colunas iguais (1 fração cada) */
+    grid-template-rows: repeat(7, 1fr); /* Cria 7 linhas iguais (1 fração cada) */
+    gap: 0; /* Define o espaçamento entre os itens do grid como 0 */
     grid-template-areas:
-      "Cabecalho Cabecalho Cabecalho Cabecalho Cabecalho"
-      "barra_navegacao barra_navegacao barra_navegacao barra_navegacao barra_navegacao"
+      "Cabecalho Cabecalho Cabecalho Cabecalho Cabecalho" /* Área do cabeçalho ocupa todas as colunas */
+      "barra_navegacao barra_navegacao barra_navegacao barra_navegacao barra_navegacao" /* Área da barra de navegação ocupa todas as colunas */
+      "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional" /* Área do conteúdo principal e adicional */
       "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
       "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
       "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
-      "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
-      "rodape rodape rodape rodape rodape";
-}
-  
-*{
-    margin: 0;
-    padding: 0;
-}
-.Cabecalho { grid-area: Cabecalho; }
-  
-.barra_navegacao { grid-area: barra_navegacao; }
+      "rodape rodape rodape rodape rodape"; /* Área do rodapé ocupa todas as colunas */
+} 
 
-.contetudo_principal { grid-area: contetudo_principal; }
-  
-.conteudo_dicional { grid-area: conteudo_dicional; }
-
-.rodape { grid-area: rodape; }
-
-.Cabecalho{
-    background-color: red;
-}
-.barra_navegacao{
-    background-color: aqua;
+.Cabecalho {
+    grid-area: Cabecalho; /* Define a área do grid para o cabeçalho */
 }
 
-.contetudo_principal{
-    background-color: black;
-}
-.conteudo_dicional{
-    background-color: aquamarine;
+.barra_navegacao {
+    grid-area: barra_navegacao; /* Define a área do grid para a barra de navegação */
 }
 
-.rodape{
-    background-color: blueviolet;
+.contetudo_principal {
+    grid-area: contetudo_principal; /* Define a área do grid para o conteúdo principal */
 }
-  
+
+.conteudo_dicional {
+    grid-area: conteudo_dicional; /* Define a área do grid para o conteúdo adicional */
+}
+
+.rodape {
+    grid-area: rodape; /* Define a área do grid para o rodapé */
+}
+
+.Cabecalho {
+    background-color: red; /* Define a cor de fundo do cabeçalho como vermelho */
+}
+
+.barra_navegacao {
+    background-color: aqua; /* Define a cor de fundo da barra de navegação como aqua */
+}
+
+.contetudo_principal {
+    background-color: rgb(255, 255, 255); /* Define a cor de fundo do conteúdo principal como branco */
+    max-width: 100%; /* Garante que o conteúdo principal não exceda a largura do contêiner */
+}
+
+.conteudo_dicional {
+    background-color: aquamarine; /* Define a cor de fundo do conteúdo adicional como aquamarine */
+}
+
+.rodape {
+    background-color: blueviolet; /* Define a cor de fundo do rodapé como blueviolet */
+}
