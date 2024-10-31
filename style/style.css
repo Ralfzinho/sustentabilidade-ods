@@ -26,18 +26,18 @@
 body {
     height: 100vh; /* Faz com que o body ocupe toda a altura da tela */
     font-family: var(--fonte-secundaria); /*Faz que todo o texto fique com a fonte secundaria*/
+    font-size: large;
     
 }
 
 .container {
     display: grid; /* Define o contêiner como um grid */
-    height: 100%; /* Faz com que o grid ocupe toda a altura do contêiner pai */
+    min-height: 100vh;
     grid-template-columns: repeat(5, 1fr); /* Cria 5 colunas iguais (1 fração cada) */
-    grid-template-rows: repeat(7, 1fr); /* Cria 7 linhas iguais (1 fração cada) */
+    grid-template-rows: auto 1fr auto;
     gap: 0; /* Define o espaçamento entre os itens do grid como 0 */
     grid-template-areas:
       "Cabecalho Cabecalho Cabecalho Cabecalho Cabecalho" /* Área do cabeçalho ocupa todas as colunas */
-      "barra_navegacao barra_navegacao barra_navegacao barra_navegacao barra_navegacao" /* Área da barra de navegação ocupa todas as colunas */
       "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional" /* Área do conteúdo principal e adicional */
       "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
       "contetudo_principal contetudo_principal contetudo_principal contetudo_principal conteudo_dicional"
@@ -46,28 +46,13 @@ body {
 } 
 
 .Cabecalho {
-    grid-area: Cabecalho; /* Define a área do grid para o cabeçalho */
-}
-
-.barra_navegacao {
-    grid-area: barra_navegacao; /* Define a área do grid para a barra de navegação */
-}
-
+    grid-area: Cabecalho; /* Define a área do grid para o cabeçalho */}
 .contetudo_principal {
-    grid-area: contetudo_principal; /* Define a área do grid para o conteúdo principal */
-}
-
+    grid-area: contetudo_principal; /* Define a área do grid para o conteúdo principal */}
 .conteudo_dicional {
-    grid-area: conteudo_dicional; /* Define a área do grid para o conteúdo adicional */
-}
-
+    grid-area: conteudo_dicional; /* Define a área do grid para o conteúdo adicional */}
 .rodape {
-    grid-area: rodape; /* Define a área do grid para o rodapé */
-}
-
-.Cabecalho {
-    background-color: red; /* Define a cor de fundo do cabeçalho como vermelho */
-}
+    grid-area: rodape; /* Define a área do grid para o rodapé */}
 
 .barra_navegacao {
     background-color: aqua; /* Define a cor de fundo da barra de navegação como aqua */
@@ -80,8 +65,63 @@ body {
 
 .conteudo_dicional {
     background-color: aquamarine; /* Define a cor de fundo do conteúdo adicional como aquamarine */
+    
 }
 
 .rodape {
     background-color: blueviolet; /* Define a cor de fundo do rodapé como blueviolet */
+    
+}
+
+.lista_navegação{
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    list-style-type:none;
+    width: 100%;
+}
+
+.lista_navegação_link{
+    text-decoration: none;
+    padding: 5px;
+    margin: 10px;
+    font-weight: bold;
+    color: black;
+    font-family: var(--fonte-primaria);
+}
+
+#logo{
+    border-radius: 100%;    
+    width: 60px; /* Ajuste o tamanho da logo */
+    height: auto;
+    margin-right: 10px; /* Espaçamento entre logo e texto */
+}
+nav{
+    display: flex;
+    gap: 20px;
+    
+}
+.contetudo_principal{
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100vh;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: red;
+    font-family: var(--fonte-primaria);
+}
+.artigo{
+    padding: 20px;
+}
+.artigo_titulo{
+    font-family: var(--fonte-primaria);
+}
+li{
+    margin-bottom: 10px;
 }
